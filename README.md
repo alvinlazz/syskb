@@ -36,7 +36,7 @@ localhost:4000/syskb/
 layout: post
 title: 'First category'
 description: 'Sample Description'
-date: 2017-11-12 17:46:41 -0300
+date: Sun Oct  4 13:59:03 IST 2020
 categories: start blog
 by: 'SysAdmin'
 icon: 'credit-card'
