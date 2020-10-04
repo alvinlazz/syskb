@@ -1,10 +1,8 @@
-# Jekyll | Help Center
+# SysAdmin | Help Center
 Simple and responsive Jekyll theme for help center.
 
 # Demo
-[Demo online](https://gustavoquinalha.github.io/jekyll-help-center-theme/)
-
-![Color Theme](http://quinalha.me/jekyll-help-center-theme/assets/img/readme/responsive.png)
+[Demo online](https://alvinlaz96.github.io/syskb/)
 
 # Color theme
 edit in _config.yml
@@ -15,11 +13,11 @@ color_text:  "#fff"
 
 # Install
 ```
-git clone https://github.com/gustavoquinalha/jekyll-help-center-theme
+git clone https://github.com/alvinlaz96/syskb
 ```
 or
 ```
-gem install jekyll-help-center-theme
+gem install syskb
 ```
 https://rubygems.org/gems/jekyll-help-center-theme
 
@@ -29,7 +27,7 @@ bundle exec jekyll serve --livereload --watch
 ```
 Server address
 ```
-localhost:4000/jekyll-help-center-theme/
+localhost:4000/syskb/
 ```
 
 # Post Example
@@ -37,29 +35,28 @@ localhost:4000/jekyll-help-center-theme/
 ---
 layout: post
 title: 'First category'
-description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'
+description: 'Sample Description'
 date: 2017-11-12 17:46:41 -0300
 categories: start blog
-by: 'Gustavo Quinalha'
+by: 'SysAdmin'
 icon: 'credit-card'
 questions:
   - question: 'Question 1'
-    answer: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+    answer: 'Test1'
     image: "1.gif"
   - question: 'Question 2'
-    answer: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+    answer: 'Test2'
     image: "2.gif"
   - question: 'Question 3'
-    answer: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+    answer: 'Test3'
     image: "3.gif"
   - question: 'Question 4'
-    answer: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+    answer: 'Test4'
     image: "4.gif"
 ---
 ```
 ## License
 The theme is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
 
-# Inspired by
-- https://help.market.envato.com/hc/en-us
-- https://www.intercom.com/
+# Inspired And Forked
+- https://gustavoquinalha.github.io/jekyll-help-center-theme/
