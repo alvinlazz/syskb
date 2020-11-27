@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'title'
+title: 'Disk Alerts'
 description: 'This scripts can be used for all alerts related to /  /var  /home*'
 categories: Disk Alerts
 by: 'Alvin'
