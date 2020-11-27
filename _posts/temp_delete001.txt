@@ -1,0 +1,296 @@
+7892241708
+
+project = "EIG - Change Management"  AND status = "Ready for Deployment"  AND assignee in (sunil.k, prajwal.n, karthik.p, mahesh.n, abhilash.b, anil.k, chethan.n, kunal.h, doppalapudi.k, indra.y, haroon.s, alvin.la) and created >= "-7d"
+
+project = "Enterprise - Monitoring Center Server Issues" AND assignee in (alvin.la) AND worklogDate >= 2020-11-0 AND worklogDate < 2020-11-0
+
+text ~ "boxname" and created >= "-2d"
+
+ssh alvin.la@jump1.provo.unifiedlayer.com
+ssh alvin.la@wizard3.provo.unifiedlayer.com
+ssh alvin.la@jump1.pro1.eigbox.com
+ssh alvin.la@jump1.hou1.eigbox.com
+######################################################################################################################    v4ni3Sax  S!+=sUP4@  Gb"/53+@F 	Tk_>a9Kdx	 >>> https://sitechecker.pro
+grep -q '^option' file && sed -i 's/^option.*/option=value/' file || echo 'option=value' >> file  
+
+
+>>> >>>>> write query for deleting error logs..
+
+
+Cleared logs and old backups
+
+Clear /var done
+===================================
+Cleared old logs and backups
+Tracking backups  generation
+
+Clear Disk done
+===================================
+Cleared old logs and magik files
+Tracking log generation
+
+Clear /tmp done
+=================================
+Resized backups
+Maint was turned for backup resize
+
+Resize /backup done
+==================================
+
+TOS note added in cPM for CM  : 
+
+TOS notes 
+==================================
+
+Customer is having too many storage files which is causing space issue on server. Please ask customer to remove unwanted files ASAP.  
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+           EMAIL FORMAT 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+@@@@@@@@@@@@@@ Malware @@@@@@@@@@@@@@@@@
+
+Hello,
+
+Our abuse department has received a report of malware being hosted on an account under your direct control. We do apologize for any inconveniences, however, for your benefit we have provided a list of the reported content below.
+
+Here are a few steps you can take to address the malware infection and secure your site. 
+
+1. Upload  a backup of the site from a date before the intrusion and change every password associated with your account to something that is secure. If a backup is not available you can try to remove files yourself or call one of our security experts for help.
+2. Use your antivirus or anti-spyware program to scan your entire computer and clean infected files.
+3. Make sure to keep all of your software up-to-date and seek support from the vendor/developer for any known vulnerabilities/fixes/workarounds available
+4. Ensure that all of your third-party themes/templates/plugins are secure and trusted
+5. Update all of your open source applications and scripts so that you are using the latest version available and delete any unwanted scripts
+
+If you prefer to speak to a security expert, you may contact us at  844-589-5312. We’d be happy to walk you through the steps and help protect your site from further attacks.
+
+Reported Content:
+
+`````````
+`````````
+User's account seems to be hacked. Ask user to clean up and secure his account. The following Directory's/File's permission has been made 000.
+
+Customer can secure his website files from malware infections by following the steps given below: 
+- After any account is compromised the best possible solution is to upload a backup of the site from a date before the intrusion and to change every password associated with the account to something that is secure. It can be very hard to locate these hidden back doors ( the code added to a page is just a few bytes, you may not even see a change in the file sizes). If a backup is not available customer can try to remove files yourself or consult professional malware cleaning service. 
+- scan local computer with good antivirus, antispyware programs and clean bad programs. 
+- keep the software up-to-date with vendors/developers, and seek their support/forums for any known vulnerabilities/fixes/workarounds available. 
+- If customer is using third party themes/templates/plugins, he must be sure to use secured themes, plugins and templates. 
+- Customer should update all of their scripts and open source applications are of the latest version available and delete all unwanted scripts.  
+
+
+	"Malware/Virus"   "Malware/Virus Duplicate-Account" 
+
+
+@@@@@@@@@@@@@@ Inode @@@@@@@@@@@@@@@@@
+
+Hello,
+
+Your account {USERNAME} has excessive number of files and is degrading the overall server performance. Due to the extremely large number of files, your account is blocking several maintenance activities on the server from processing other accounts correctly. Please accept our apologies for the inconvenience, however, this issue is causing a serious problem for other users on the server.
+
+Generally, a large number of files indicates a configuration issue. This can be due to excessive mail, website cache, or backup files that have accumulated unchecked. More details of the exact file usage can be found at the end of this ticket. Below is the File usage report:
+
+File and Directory counts
+
+
+Many of the files in your account can be safely removed. Since managing large directories can be difficult via cPanel, we would be happy to assist in their removal. We have not removed any data at this time, but please review the file list and remove files or indicate specifically which files and directories we are permitted to remove. We want to resolve this issue as soon as possible.
+
+Thank you for your attention to this matter. If you have any additional questions or concerns please let us know.
+
+
+
+
+	Excessive files found on customer account which is causing inode issue, Please ask him to take necessary action.  
+	
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~`
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ sak-cli  {INSIDE CM FOLDER public_html}
+ service httpd status
+ tail 100f /var/log/apache2/error_log 
+ service httpd restart
+ w
+ ipcs
+ pkill -9 httpd
+ for i in $(ipcs -s | grep nobody | awk '{print $2}'); do ipcrm sem $i; done
+ sar 1 5
+ service httpd status
+ ipcs
+ montool clearsemaphores 
+ phpcount 
+ top
+ exim -bpc
+ service httpd restart
+ /scripts/rebuildhttpdconf 
+
+
+ls /var/cpanel/users | wc -l 
+
+#####  needs edits
+##### repquota -p /home3 | awk '{print $1}' | awk 'NR > 6 { print }' | grep -v 'root\|#\|migration' | awk NF  |xargs -n1 -I{}  sudo du -sh  /home3/{}/public_html/error_log 2> /dev/null
+######
+
+Create backup of CM files:    sshrestore -u USERNAME -l ; systemctl daemon-reload;systemctl restart nfs  #BHCOMMENTED#
+
+Raid check :  /usr/local/eig_zabbix/sbin/raidcheck/bin/storcli64 /call set time=systemtime
+    echo -e "Box:`hostname`\nError:\n`grep -rA1 "Reset successful" /var/log/messages`\nFirmware details:\n`/opt/MegaRAID/storcli/storcli64 /call show | grep -E '(Product|Serial|FW)'`;\nPCI Detail:\n`lspci | grep -i raid`;"
+
+screen -dmS dbopt bash; screen -S dbopt -p 0 -X stuff $'homepart=$(df -B 1 | grep /home | sort -rk4 | awk "NR==1{print $(NF)}"); tmpdir=$(mktemp -d --tmpdir=${homepart});printf "[mysql]\nkey_buffer_size=128M\nmyisam_sort_buffer_size=256M\nread_buffer_size=64M\nwrite_buffer_size=64M\ntmpdir=\n" >${tmpdir}/mysqlcheck.conf; mysqlcheck --defaults-extra-file=${tmpdir}/mysqlcheck.conf -Ao; rm -f ${tmpdir}/mysqlcheck.conf; rmdir $tmpdir; unset tmpdir; exit \n'; watch df -h /var /var/mysqltmp
+
+
+
+while read file; do mv -vf "$file" /app/dest/; done < list.txt 
+xargs mv -t /app/dest/ < /tmp/list.txt
+
+less /etc/userdomains | sed 's/.*://' | sort | uniq  <<< No of users in server -2 
+wc -l /etc/trueuserdomains  <<< No of users in server -1
+
+egrep -i 'wp-' /usr/local/apache/logs/suphp_log | egrep -v 'load|cron|admin|content|login|post|signup|rss2|includes|trackback|settings|header|config|archives|activate|mail|opml' | awk '{print $8}' | sort | uniq -c | sort -n | tail -30;
+
+ls -ld /home/*/public_html/wp-[a-z][a-z][a-z][a-z].php | grep -v 'pass\|cron\|mail\|load\|feed\|atom\|meta\|info\|blog'
+
+grep -B500 "x\-info\=\"http://www.rsyslog.com\"\]\ start" /var/log/messages* | grep -vE '(named|ftp|ssh|zabbix)' | tail -10000  <<<<  To get  pre boot history
+
+
+ps faux|grep backup|awk '{print $2}' | xargs kill -9
+backuphelper reseed // backuphelper reset_queue
+
+find /var/lib/puppet/clientbucket/* -type f -mtime +30 -atime +30 -delete -print
+
+cd /usr/local/cpanel/3rdparty/mailman/archives/private/   {Mailman related thrd >> https://forums.cpanel.net/threads/mailman-demystified.444901/ }
+tmpwatch --mtime --all 744 /usr/local/cpanel/3rdparty/mailman/archives/private/listname_clientdomain.ext/attachments   <<<   Clearing / archives logs
+  
+last_global=$(tail -15000 /home1/apachelogs/global_logs/access_logs);echo Top Domains:;echo -e "$last_global" | awk '{print $1}' | sort -n | uniq -c | sort -nrk1 | head -10; echo Top IPs; echo -e "$last_global" | awk '{print $2}' | sort -n | uniq -c | sort -nrk1 | head -10; echo Top Files; echo -e "$last_global" | awk '{print $12}' | sort -n | uniq -c | sort -nrk1 | head -10; 
+
+
+Filemamanger issue 
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+uptime
+top c
+ls /usr/local/cpanel/logs/error_log
+grep houseqv8 /usr/local/cpanel/logs/error_log
+ui user
+/scripts/rebuildhttpdconf
+service httpd reload
+/root/bin/perms  user
+
+
+Symlink issue with SSH
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+umount /home
+grep username /proc/mounts |awk '{print $2}'|while read i; do umount -f $i;done
+/etc/init.d/hgstartprovo start
+
+###
+httpd -t
+vi ./conf.d/includes/hgincludes/listen_80.conf  --- Apache Fix
+vi ./conf.d/includes/hgincludes/listen_443.conf
+###
+ service httpd restart
+ /scripts/buildhttpdconf 
+ service httpd status
+ w
+ ipcs
+ ipcs -s | grep nobody |  perl -e 'while (<STDIN>) { @a=split(/\s+/); print `ipcrm sem $a[1]`}'
+ grep hobbyzzmag.com  /var/log/httpd/error_log
+ tail -100 /etc/httpd/logs/access_log
+ grep hobbyzzmag.com /etc/httpd/logs/access_log
+ grep mpservice.club /etc/httpd/logs/access_log
+ grep mpservice.club /etc/httpd/logs/access_log | head -100
+
+CPU high usage |  Memory abuse
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+top -s -c  
+ipcs -s | grep nobody |  perl -e 'while (<STDIN>) { @a=split(/\s+/); print `ipcrm sem $a[1]`}' ;  pkill -9 php*  ; ipcs
+curl -s -H 'Host: eig-wp-test-site.com' -A Site24x7 http://`hostname`/uncached/|lynx --dump --stdin|grep -o "Monitor Site"
+ngrep -l -q -d eth0:cp40 -i "^GET |^POST " tcp and port 80
+
+tcpdump -XX -ttt net 45.142.120.0/24 -c 100 > /ramdisk/ea_ips.txt
+netstat -nputw | grep -i '45.142.120.0/24'
+ 
+grep "$(date +"%d/%b/%Y")"  /home1/apachelogs/global_logs/access_logs | grep topedgefx.com | tail -1000| awk '{print $2}' | sort | uniq -c | sort -nr | head -20
+
+dstat -c --top-cpu -dn --top-mem
+netstat -tn 2>/dev/null | grep :993 | awk '{print $5}' | cut -d: -f1 | sort | uniq -c | sort -nr | head
+netstat -ntu|awk '{print $5}'|cut -d: -f1 -s |cut -f1,2 -d'.'|sed 's/$/.0.0/'|sort|uniq -c|sort -nk1 -r   ======= To view /16 format
+ngrep -d any -q -W byline -n 10000 -c200 'GET|POST' port 80 |egrep Host |gawk -F": " 'NF == 2 { print $2 }' |sort |uniq -c |sort -k1n  | tail -5
+ngrep -n 1000 -W byline '' 'tcp port 80' | grep 'Host:' | awk '{print $2}' | sort | uniq -c | sort -nrk1 | head -10
+tail -15000 /usr/local/apache/logs/suphp_log | awk '{print $8}' | sort -n | uniq -c | sort -nrk1 | head -15
+cat /usr/local/apache/logs/error_log | egrep -i 'wp-login|xmlrpc' | grep -Eo "client [0-9.]+" | sed 's/client=//' | sort | uniq -c | sort -rn | head 
+cat /usr/local/apache/logs/error_log | egrep -i 'wp-login|xmlrpc' | grep -Eo "client [0-9.]+" | sed 's/client=//' | sort | uniq -c | sort -rn | head |awk '{print $3}'|egrep -v '5177|4264'|xargs blockip --ip
+
+
+P="USER";QL="=================================================================================================================="; echo $QL; echo -e "\nMysql Table Statistics:"; mysql -e "select * from information_schema.table_statistics where table_schema like '$P%' order by rows_read desc limit 15"; echo $QL;  echo -e "Processes Running/Usage:\n "; ps aux | grep "$P" | grep -v defunct; echo $QL; echo -e "Top Total PHP Processes and Top by Total Size of processes data :\n "; phpcount | grep "$P"; echo $QL;echo -e "Mysql Processes:\n " ; mysqladmin pr | grep "$P";echo $QL;echo -e "Out bound connection:\n "; /usr/zabbix/bin/outbound_user_conns | grep "$P"; echo $QL;
+
+
+last_global=$(tail -15000 /home1/apachelogs/global_logs/access_logs);echo Top Domains:;echo -e "$last_global" | awk '{print $1}' | sort -n | uniq -c | sort -nrk1 | head -10; echo Top IPs; echo -e "$last_global" | awk '{print $2}' | sort -n | uniq -c | sort -nrk1 | head -10; echo Top Files; echo -e "$last_global" | awk '{print $12}' | sort -n | uniq -c | sort -nrk1 | head -10;
+
+
+clear;for i in $(ps aux | grep php | awk '{print $1}' | grep -vwE '(root|nobody|[0-9])' | sort -n | uniq -c | sort -nrk1 | head -10 | awk '{print $2}' | xargs -i grep {} /etc/passwd | awk -F ":" '{print $1}'); do logpath=/home/$i/access-logs/ 2>/dev/null; each=`ls -1S $logpath 2>/dev/null | grep -E '([0-9]|[a-z])' | head -1`;echo -e "\nUser: $i Domain: $each\nMAX IP HITS:\n`tail -20000 $logpath/$each 2>/dev/null | awk '{print $1}'  | sort -n | uniq -c | sort -nrk1 | head -5`\nMAX FILE HITS:\n`tail -20000 $logpath/$each 2>/dev/null | awk '{print $7}'  | sort -n | uniq -c | sort -nrk1 | head -5`"; echo "+------------------------------------------------------+";done
+
+clear; echo -e '\nxmlrpc attackers \n\n'; tail -10000 /usr/local/apache/logs/error_log | grep xmlrpc| awk '{print $11}'| cut -d":" -f1| sort | uniq -c | sort -nrk1| head; echo -e '\nDovecot Bruteforce \n\n'; grep "$(date +'%b %e')" /var/log/maillog | grep dovecot| grep "auth failed" | grep -Eo "rip=[0-9.]+" | sed 's/rip=//' | sort | uniq -c | sort -rn | head; echo -e '\nModSec abusers \n\n'; tail -n10000 /usr/local/apache/logs/error_log | grep -oP "(?<=client ).+(?=] ModSecurity: Access denied with code 406)"| awk '{print $1}'| cut -d":" -f1| sort|uniq -c|sort -nrk1|head
+
+ps -eo 'user,rss' --no-headers --sort=user | awk -v t=$(grep -oP "(?<=^MemTotal:).+(?=kB)" /proc/meminfo|awk '{print $1}') '{A[$1]+=$2;next} END {for(i in A){ printf "%s %.2fMB %.2f'%'\n", i,A[i]/1024,(A[i]/t)*100}}'|sort -nrk2|head|sed '1iUser Memory(MB) Percent\n'|column -t|sed '1i=============================\nTABULATED MEMORY USAGE:\n============================='|sed '5i-----------------------------'
+
+echo -e "\nThe following is an accumulated total of CPU and Memory percentage usage by PHP processes for a 30 second interval:\n";paste <(n=0;echo "CPU% Total:";while [[ "$n" -lt "60" ]]; do let n++; sleep .5; ps --no-headers -o %cpu,user -C php,php-cgi; done | awk '{s[$2]+=$1}END{ for(i in s) print s[i], i }' | sort -rnk1) <(n=0;echo "Mem% Total:"; while [[ "$n" -lt "60" ]]; do let n++; sleep .5; ps --no-headers -o %mem,user -C php,php-cgi; done | awk '{s[$2]+=$1}END{ for(i in s) print s[i], i }' | sort -rnk1)|column -t
+
+fatips(){ echo "$(tail -n 10000 /usr/local/apache/logs/error_log | grep -iP "$1" | grep -oP "(?<=client )[0-9\.]*")) $( tail -n 10000 /var/log/domlogs/global_log | grep -iP "$1" | grep -oP "^[0-9\.]*")"|sort | uniq -c | sort -n |  awk '$1>50' | while read cnt line; do echo $cnt" "$line" ------------------"; iptables -nL | grep $line; done ; }; fatips "(admin|xmlrpc|wp-log|register)"
+
+pkill -9 php*
+
+blockip --ip 
+
+devilbanner --singleip 
+exit
+
+sys='sys-snap -a 8/25 12:11'; echo; $sys|head -3; echo; echo "[ Top Remote IP(s) ]"; $sys |grep -oP '(?<=REMOTE_ADDR=)\S*'|sort|uniq -c|sort -gr|head -n 10;
+grep '18.206.49.217' /home1/apachelogs/global_logs/access_logs | cut -d: -f1 | sort | uniq -c | sort -nr 
+
+Mysql abuse
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+grep "$(date +"%Y-%m-%d")" /var/lib/mysql/$(hostname).err | grep -o "[0-9]\+\.[0-9]\+\.[0-9]\+\.[0-9]\+" | sort | uniq -c | sort -n | tail -10   <<< Counting IPs in text files
+grep 2020-10-27 /var/lib/mysql/$(hostname).err | grep 'rederatural\|shield8lunch\|applematcher\|shodan\|ERROR'
+sys='sys-snap -a 10/06 06:'; echo; $sys|head -3; echo; echo "[ Top Remote IP(s) ]"; $sys |grep -oP '(?<=REMOTE_ADDR=)\S*'|sort|uniq -c|sort -gr|head -n 10;
+grep '.*06/oct/2020' /home1/apachelogs/global_logs/access_logs | cut -d: -f1 | sort | uniq -c | sort -nr
+
+zgrep sshd /var/log/auth.log* -h |grep -F 'Accepted'
+grep 'Aug 24 02:5' /var/log/messages | grep 'collectd'
+
+Mysql alert fix 
+``````````````````
+/usr/local/eig_zabbix/sbin/mysql_checks; grep eig.mysqlThreads /root/.mysqlout
+/usr/bin/zabbix_sender -c /etc/zabbix/zabbix_agentd.conf -s $(hostname) -k eig.mysqlThreads -o 9 -vv
+
+
+mysqladmin ext | grep Threads
+SHOW FULL PROCESSLIST\G
+mysqladmin processlist |grep '^|' |awk '{print $4}' |sed -e 's/_.*//' |sort |uniq -c |sort -n |tail -7
+
+sudo mysql -e 'select USER,BUSY_TIME,CONNECTED_TIME,CPU_TIME from USER_STATISTICS order by CPU_TIME desc limit 10;' INFORMATION_SCHEMA
+
+mysqladmin proc stat|wc -l
+mysqladmin -i1  extended | grep Threads_running
+
+tcpdump -s 1500 -w tcp.out port 3306
+strings tcpdump.out
+
+mysql information_schema -e "select USER, DB, COMMAND, INFO from PROCESSLIST WHERE COMMAND='Killed';" |awk '{print $2}' |sort |uniq |egrep -iv "DB|MySQL|NULL|roundcube|horde|root"|while read musers; do cut -d\_ -f1;done|while read users; do for I in $(ps auxf |grep -w $users |awk '{print $2}'); do echo Kill user processes... $I; kill -9 $I 2> /dev/null; done; done
+
+timeout 60s tcpdump -n -i eth0 -A -s 1500 port 80|grep Host > /tmp/tcp ; cat /tmp/tcp|sort|uniq -c|sort -n -k1|tail ; timeout 5s tcpdump -n -i eth0 -A -s 1500 port 80|grep IP > /tmp/tcp_IP ; cat /tmp/tcp_IP |awk '{print $5}'|sort|uniq -c|sort -n -k1|tail ;timeout 10s tcpdump -n -i eth0 -A -s 1500 port 80|egrep '(xmlrpc|wp-login|wlmanifest)'; attackers
+
+
+Tracing\stracing php running
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+user=`pwd | cut -d/ -f3`;x=1; while [ $x = 1 ]; do process=$(pgrep -u $user php); if [ $process ]; then x=0; fi; done; strace -tf -s 1000 -p $process
+
+Exim issues
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+find /var/spool/exim/input/ -type f -empty -delete -print ; for file in $(find /var/spool/exim/input/ -type f -name \*-D | sed 's/-D$//g') ; do if [[ ! -e ${file}-H ]]; then rm -fv "${file}-D"; fi ; done ; for file in $(find /var/spool/exim/input/ -type f -name \*-H | sed 's/-H$//g') ; do if [[ ! -e ${file}-D ]]; then rm -fv "${file}-H"; fi ; done ; for file in $(find /var/spool/exim/msglog/ -type f | sed 's/\/var\/spool\/exim\/msglog\///') ; do if [[ ! -e /var/spool/exim/input/${file}-D ]]; then rm -fv "/var/spool/exim/msglog/${file}"; fi ; done ; disk=/var/spool/exim ; exiqgrep -z -i | xargs exim -Mrm ; exiqgrep -f '<>' -i | xargs exim -Mrm ; exiqgrep -f root@$(hostname) -i | xargs exim -Mrm ; /opt/zabbix/bin/zabbix_sender -c /opt/zabbix/etc/zabbix_agentd.conf -s $(hostname) -k "vfs.fs.size[${disk},pfree]" -o $(echo "100 - $(df -h ${disk} | grep -Po '\d+(?=%)')" | bc) ; /opt/zabbix/bin/zabbix_sender -c /opt/zabbix/etc/zabbix_agentd.conf -s $(hostname) -k "vfs.fs.size[${disk},used]" -o $(df -h ${disk} | grep ${disk} | awk '{print $3}') ; /opt/zabbix/bin/zabbix_sender -c /opt/zabbix/etc/zabbix_agentd.conf -s $(hostname) -k "vfs.fs.inode[${disk},pfree]" -o $(echo "100 - $(df -i ${disk} | grep -Po '\d+(?=%)')" | bc)
+
+
+
